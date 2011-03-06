@@ -39,9 +39,10 @@ imap <right> <nop>
 " colorscheme desert
 colorscheme ir_black
 " colorscheme railscasts
+" colorscheme ir_black
+colorscheme railscasts
+" colorscheme mac_classic
 " colorscheme topfunky-light
-" colorscheme vibrantink
-" colorscheme vividchalk
 
 " Switch windows with Ctrl + a movement key
 nnoremap <C-h> <C-w>h
@@ -68,13 +69,37 @@ nmap <silent> <leader>s :set nolist!<CR>
 set nolist!
 
 nmap <LEADER>d :NERDTreeToggle<CR>
+let NERDSpaceDelims=1
 
+if has("autocmd")
+  filetype plugin indent on  " enable filetype detection
+endif
 
+" Indentation
+if has("autocmd")
+  autocmd FileType sh setlocal shiftwidth=4
+  autocmd FileType css setlocal shiftwidth=4
+  autocmd FileType python setlocal shiftwidth=4
+endif
+
+" Markdown
+if has("autocmd")
+  autocmd FileType markdown set wrap
+  autocmd FileType markdown set linebreak
+endif
+
+" Ruby
+nmap <LEADER>E :s/_eventually//<CR>
+nmap <LEADER>e :s/should/should_eventually/<CR>
+
+" Web
+if has("autocmd")
+  autocmd FileType haml set nowrap
+endif
+ 
 " Useful for running vi within irb
 " From http://vimcasts.org/episodes/running-vim-within-irb/
 if has("autocmd")
-  filetype plugin indent on  " enable filetype detection
-
   " Restore cursor position
   "autocmd BufReadPost *
   "  \ if line("'\"") > 1 && line("'\"") <= line("$") |
@@ -85,3 +110,14 @@ if &t_Co > 2 || has("gui_running")
   syntax on
 endif
 
+" Functions
+function! OpenChangedFiles()
+  only " Close all windows, unless they're modified
+  let status = system('git status -s | grep "^ \?\(M\|A\)" | cut -d " " -f 3')
+  let filenames = split(status, "\n")
+  exec "edit " . filenames[0]
+  for filename in filenames[1:]
+    exec "sp " . filename
+  endfor
+endfunction
+command! OpenChangedFiles :call OpenChangedFiles()
