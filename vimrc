@@ -40,7 +40,7 @@ imap <right> <nop>
 colorscheme ir_black
 " colorscheme railscasts
 " colorscheme ir_black
-colorscheme railscasts
+" colorscheme railscasts
 " colorscheme mac_classic
 " colorscheme topfunky-light
 
@@ -51,7 +51,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 """ Make it easy to modify vim settings on the fly.
-""
 " From http://vimcasts.org/episodes/updating-your-vimrc-file-on-the-fly/
 
 " Automatically source the config file on save.
@@ -86,28 +85,6 @@ endif
 if has("autocmd")
   autocmd FileType markdown set wrap
   autocmd FileType markdown set linebreak
-endif
-
-" Ruby
-nmap <LEADER>E :s/_eventually//<CR>
-nmap <LEADER>e :s/should/should_eventually/<CR>
-
-" Web
-if has("autocmd")
-  autocmd FileType haml set nowrap
-endif
- 
-" Useful for running vi within irb
-" From http://vimcasts.org/episodes/running-vim-within-irb/
-if has("autocmd")
-  " Restore cursor position
-  "autocmd BufReadPost *
-  "  \ if line("'\"") > 1 && line("'\"") <= line("$") |
-  "  \   exe "normal! g`\"" |
-  "  \ endif
-endif
-if &t_Co > 2 || has("gui_running")
-  syntax on
 endif
 
 " Functions
