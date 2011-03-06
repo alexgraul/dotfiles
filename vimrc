@@ -6,7 +6,7 @@ set tabstop=2               " default size of a real tab stop
 set softtabstop=2           " pressing tab/backspaces inserts/removes 2 chars
 set shiftwidth=2            " the number of spaces used by << and >>
 set expandtab               " insert spaces instead of tabs
-set textwidth=72            " right margin to use when wrapping text
+"set textwidth=72            " right margin to use when wrapping text
 
 set autoindent
 set nowrap                  " disable line wrapping
@@ -20,6 +20,8 @@ set wildmenu                " nice tab completion just above the status bar
 
 set history=1000            " remember more than 20 commands/search patterns
 set noswapfile
+
+set clipboard=unnamed       " use OSX clipboard by default
 
 set lines=45
 set columns=100
