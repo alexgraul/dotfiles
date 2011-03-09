@@ -15,8 +15,10 @@ set incsearch               " show search matches as you type
 set hidden                  " open multiple files in one 'window'
 set number                  " show line numbers
 set laststatus=2            " always show status bar
+set relativenumber          " relative line numbers
 set ruler                   " display the ruler at the bottom of the window
 set wildmenu                " nice tab completion just above the status bar
+set foldmethod=indent
 
 set history=1000            " remember more than 20 commands/search patterns
 set noswapfile
