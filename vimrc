@@ -83,6 +83,8 @@ if has("autocmd")
   autocmd FileType sh setlocal shiftwidth=4
   autocmd FileType css setlocal shiftwidth=4
   autocmd FileType python setlocal shiftwidth=4
+  autocmd BufRead,BufNewFile *.vm  setfiletype velocity
+  autocmd BufRead,BufNewFile *.json setfiletype json
 endif
 
 " Markdown
