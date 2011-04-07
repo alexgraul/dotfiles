@@ -85,6 +85,8 @@ if has("autocmd")
   autocmd FileType python setlocal shiftwidth=4
   autocmd BufRead,BufNewFile *.vm  setfiletype velocity
   autocmd BufRead,BufNewFile *.json setfiletype json
+  au BufEnter *.css set nocindent
+  au BufLeave *.css set cindent
 endif
 
 " Markdown
