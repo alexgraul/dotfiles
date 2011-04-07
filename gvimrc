@@ -10,8 +10,6 @@ set guifont=Inconsolata:h15
 set lines=40 columns=85     " window dimensions
 set relativenumber          " relative line numbers
 
-colorscheme ir_black
-
 " Glenn's config which opens two splits when you're editing a project
 " if isdirectory(@%) == 1
 "   vsplit
