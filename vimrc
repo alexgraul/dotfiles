@@ -64,6 +64,9 @@ nnoremap <C-l> <C-w>l
 if has("autocmd")
   autocmd BufWritePost .vimrc source $MYVIMRC
 endif
+"
+"Rooter for change on tabs
+autocmd BufEnter *.rb,*.html,*.py,*.json,*.css,*.json,*.js,Rakefile,*.ru :Rooter
 
 " Quickly open the vim config file in a new tab.
 let mapleader = ","
