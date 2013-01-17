@@ -6,9 +6,10 @@ set guioptions-=r           " hide the scrollbars
 set guioptions-=R           " hide the scrollbars with vertical split
 set guioptions-=l           " hide the scrollbars
 set guioptions-=L           " hide the scrollbars with vertical split
-set guifont=Inconsolata:h15
+set guifont=Inconsolata:h18
 set lines=40 columns=85     " window dimensions
-set relativenumber          " relative line numbers
+set guitablabel=%t 
+set guitabtooltip=%F
 
 " Glenn's config which opens two splits when you're editing a project
 " if isdirectory(@%) == 1
