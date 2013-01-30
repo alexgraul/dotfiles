@@ -52,9 +52,6 @@
 [submodule "bundle/vim-css3-syntax"]
 	path = bundle/vim-css3-syntax
 	url = https://github.com/hokaccha/vim-css3-syntax.git
-[submodule "bundle/rooter.vim"]
-	path = bundle/rooter.vim
-	url = https://github.com/airblade/vim-rooter.git
 [submodule "bundle/jshint"]
 	path = bundle/jshint
 	url = https://github.com/walm/jshint.vim.git
