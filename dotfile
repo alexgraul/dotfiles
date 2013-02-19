@@ -1,0 +1,19 @@
+export HISTFILESIZE=3000000
+export HISTSIZE=3000000
+export EDITOR=mvim
+export PS1="\[\e[1;30m\]\w$ \[\e[0m\]"
+
+PATH=$PATH:/usr/local/share/npm/bin
+
+reset() { echo -e \\033c; }
+jshint() { /usr/local/share/npm/lib/node_modules/jshint/bin/hint "${@}"; }
+
+serve() { 
+    local port=8000
+    if [ $# -ne 0 ]
+    then
+        local port=$@
+    fi
+    echo $port
+    /usr/local/share/npm/lib/node_modules/http-server/bin/http-server . -p $port;
+}
