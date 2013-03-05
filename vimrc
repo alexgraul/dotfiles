@@ -40,6 +40,10 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+" open and close folds with space
+nnoremap <space> za
+vnoremap <space> zf
+
 " colorscheme desert
 " colorscheme ir_black
 " colorscheme railscasts
