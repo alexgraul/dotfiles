@@ -15,14 +15,14 @@ set incsearch               " show search matches as you type
 set hidden                  " open multiple files in one 'window'
 set number                  " show line numbers
 set laststatus=2            " always show status bar
-set relativenumber          " relative line numbers
+"set relativenumber          " relative line numbers
 set ruler                   " display the ruler at the bottom of the window
 set wildmenu                " nice tab completion just above the status bar
 
 set foldmethod=indent       " enable folding on indents
 set foldlevelstart=20       " stop folding on open
 
-set history=1000            " remember more than 20 commands/search patterns
+set history=10000           " remember more than 20 commands/search patterns
 set noswapfile
 
 set clipboard=unnamed       " use OSX clipboard by default
@@ -94,7 +94,6 @@ if has("autocmd")
   autocmd FileType sh setlocal shiftwidth=4
   autocmd FileType css setlocal shiftwidth=2
   autocmd FileType python setlocal shiftwidth=4
-  autocmd BufRead,BufNewFile *.vm  setfiletype velocity
   autocmd BufRead,BufNewFile *.json setfiletype json
   au BufEnter *.css set nocindent
   au BufLeave *.css set cindent
