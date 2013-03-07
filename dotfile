@@ -9,6 +9,7 @@ PATH=$PATH:/usr/local/share/npm/bin
 
 reset() { echo -e \\033c; }
 jshint() { /usr/local/share/npm/lib/node_modules/jshint/bin/hint "${@}"; }
+fname() { find . -iname "*$@*"; }
 
 serve() { 
     local port=8000
