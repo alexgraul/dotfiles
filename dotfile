@@ -3,6 +3,8 @@ export HISTSIZE=3000000
 export EDITOR=mvim
 export PS1="\[\e[1;30m\]\w$ \[\e[0m\]"
 
+set -o vi
+
 PATH=$PATH:/usr/local/share/npm/bin
 
 reset() { echo -e \\033c; }
