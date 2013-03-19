@@ -1,7 +1,8 @@
 #!/bin/sh
 
 git submodule init
-brew install ack
+git submodule update
+brew install ack bash-completion wget tree 
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
-ln -s ~/.vim/dotfile ~/.bash_profile
+ln -s ~/.vim/profile ~/.bash_profile
