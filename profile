@@ -11,8 +11,8 @@ export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/Users/alex/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
-if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
-. `brew --prefix`/etc/bash_completion.d/git-completion.bash
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+        . `brew --prefix`/etc/bash_completion
 fi
 
 reset() { echo -e \\033c; }
