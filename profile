@@ -30,7 +30,7 @@ git_prompt_info() {
 
 git_status() {
   if current_git_status=$(git status | grep 'added to commit' 2> /dev/null); then
-    echo "⚡"
+    echo "⚒"
   else
     echo "$"
       fi
