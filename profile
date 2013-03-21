@@ -32,7 +32,7 @@ git_status() {
   if current_git_status=$(git status | grep 'added to commit' 2> /dev/null); then
     echo "⚒"
   else
-    echo "$"
+    echo "»"
       fi
 }
 export PS1='\w$(git_prompt_info) '
