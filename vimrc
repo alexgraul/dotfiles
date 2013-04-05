@@ -27,9 +27,6 @@ set noswapfile
 
 set clipboard=unnamed       " use OSX clipboard by default
 
-set lines=45
-set columns=100
-
 " disable arrow keys
 map <up> <nop>
 map <down> <nop>
@@ -72,6 +69,10 @@ endif
 "Rooter for change on tabs
 autocmd BufEnter *.rb,*.html,*.py,*.json,*.css,*.json,*.js,Rakefile,*.ru :Rooter
 autocmd TabEnter *.rb,*.html,*.py,*.json,*.css,*.json,*.js,Rakefile,*.ru :Rooter
+
+augroup filetypedetect 
+  au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
+augroup END 
 
 " Quickly open the vim config file in a new tab.
 let mapleader = ","

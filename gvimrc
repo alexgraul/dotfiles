@@ -7,9 +7,12 @@ set guioptions-=R           " hide the scrollbars with vertical split
 set guioptions-=l           " hide the scrollbars
 set guioptions-=L           " hide the scrollbars with vertical split
 set guifont=Inconsolata:h15
-set lines=40 columns=85     " window dimensions
+
+set lines=50
+set columns=179
+
 set guitablabel=%t 
 set guitabtooltip=%F
 
-nmap <leader>1 :set lines=40 columns=85<CR><C-w>o
-nmap <leader>2 :set lines=80 columns=204<CR><C-w>v
+nmap <leader>1 :set lines=50 columns=179<CR><C-w>o
+nmap <leader>2 :set lines=50 columns=179<CR><C-w>v

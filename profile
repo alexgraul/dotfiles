@@ -3,12 +3,12 @@ export HISTFILESIZE=30000000
 export HISTSIZE=30000000
 export HISTIGNORE="&:ls:[bf]g:exit:history"
 export EDITOR=mvim
+export JAVA_HOME=$(/usr/libexec/java_home)
 export PS1='\w$(__git_ps1 "(%s)") > '
 
 set -o vi
 
 export PATH=/usr/local/share/npm/bin:$PATH
-export PATH=/Users/alex/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
