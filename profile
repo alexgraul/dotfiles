@@ -5,6 +5,7 @@ export HISTIGNORE="&:ls:[bf]g:exit:history"
 export EDITOR=mvim
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PS1='\w$(__git_ps1 "(%s)") > '
+export JRUBY_HOME=$HOME/.rvm/rubies/jruby-1.7.3/
 
 set -o vi
 
@@ -40,3 +41,5 @@ export PS1='\w$(git_prompt_info) '
 ################################# RVM
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 rvm default
+
+git config --global alias.lg "log --color --graph --pretty=format:'%Cblue%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"

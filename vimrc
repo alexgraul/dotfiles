@@ -61,6 +61,9 @@ nnoremap <C-l> <C-w>l
 """ Make it easy to modify vim settings on the fly.
 " From http://vimcasts.org/episodes/updating-your-vimrc-file-on-the-fly/
 
+"remove netrw prompt on saving a file
+set cmdheight=3
+
 " Automatically source the config file on save.
 if has("autocmd")
   autocmd BufWritePost .vimrc source $MYVIMRC
@@ -70,7 +73,11 @@ endif
 autocmd BufEnter *.rb,*.html,*.py,*.json,*.css,*.json,*.js,Rakefile,*.ru :Rooter
 autocmd TabEnter *.rb,*.html,*.py,*.json,*.css,*.json,*.js,Rakefile,*.ru :Rooter
 
+set splitbelow
+set splitright
 augroup filetypedetect 
+  au BufNewFile,BufRead Thorfile set filetype=ruby syntax=ruby
+  au BufNewFile,BufRead *.thor set filetype=ruby syntax=ruby
   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
 augroup END 
 
