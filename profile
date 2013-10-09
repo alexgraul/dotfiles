@@ -11,6 +11,7 @@ set -o vi
 
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
@@ -43,3 +44,11 @@ if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 rvm default
 
 git config --global alias.lg "log --color --graph --pretty=format:'%Cblue%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+git config --global core.editor "mvim -f"
+
+
+VENVWRAPPER=`which virtualenvwrapper.sh`
+if [ -e $VENVWRAPPER ]
+then
+  source $VENVWRAPPER
+fi
