@@ -81,6 +81,8 @@ augroup filetypedetect
   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
 augroup END 
 
+au FileType python setl sw=2 sts=2 et
+
 " Quickly open the vim config file in a new tab.
 let mapleader = ","
 nmap <leader>v :tabedit $MYVIMRC<CR>
@@ -109,7 +111,6 @@ endif
 
 " Markdown
 if has("autocmd")
-  autocmd FileType markdown set wrap
   autocmd FileType markdown set linebreak
 endif
 
