@@ -27,6 +27,10 @@ set noswapfile
 
 set clipboard=unnamed       " use OSX clipboard by default
 
+" Bash style autocomplete with tab-menu for options
+set wildmode=longest,list,full
+set wildmenu
+
 " disable arrow keys
 map <up> <nop>
 map <down> <nop>

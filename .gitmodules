@@ -61,3 +61,6 @@
 [submodule "bundle/vim-netrw"]
 	path = bundle/vim-netrw
 	url = https://github.com/vim-scripts/netrw.vim
+[submodule "bundle/mustache"]
+	path = bundle/mustache
+	url = git://github.com/mustache/vim-mustache-handlebars.git
