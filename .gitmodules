@@ -40,9 +40,6 @@
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
 	url = https://github.com/ewiplayer/vim-scala.git
-[submodule "bundle/vim-css3-syntax"]
-	path = bundle/vim-css3-syntax
-	url = https://github.com/hail2u/vim-css3-syntax.git
 [submodule "bundle/jshint"]
 	path = bundle/jshint
 	url = https://github.com/walm/jshint.vim.git
