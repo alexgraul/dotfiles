@@ -61,3 +61,6 @@
 [submodule "bundle/vim-css3"]
 	path = bundle/vim-css3
 	url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule "bundle/vim-json"]
+	path = bundle/vim-json
+	url = https://github.com/jakar/vim-json.git

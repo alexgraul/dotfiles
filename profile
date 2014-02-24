@@ -4,7 +4,7 @@ export HISTSIZE=30000000
 export HISTIGNORE="&:ls:[bf]g:exit:history"
 export EDITOR=mvim
 export JAVA_HOME=$(/usr/libexec/java_home)
-export PS1='\w$(__git_ps1 "(%s)") > '
+# export PS1='\w$(__git_ps1 "(%s)") > Xx '
 export JRUBY_HOME=$HOME/.rvm/rubies/jruby-1.7.3/
 
 set -o vi
@@ -12,6 +12,8 @@ set -o vi
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=/Users/alex/code/phabricator/arcanist/bin:$PATH
+
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
@@ -32,12 +34,12 @@ git_prompt_info() {
 
 git_status() {
   if current_git_status=$(git status | grep 'added to commit' 2> /dev/null); then
-    echo "⚒"
+    echo "🔨"
   else
-    echo "»"
+    echo "👻"
       fi
 }
-export PS1='\w$(git_prompt_info) '
+export PS1='\w$(git_prompt_info)  '
 
 ################################# RVM
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
