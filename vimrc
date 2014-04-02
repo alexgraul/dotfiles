@@ -24,6 +24,7 @@ set foldlevelstart=20       " stop folding on open
 
 set history=10000           " remember more than 20 commands/search patterns
 set noswapfile
+set backupdir=~/.tmp
 
 set clipboard=unnamed       " use OSX clipboard by default
 
@@ -112,6 +113,8 @@ if has("autocmd")
   au BufEnter *.css set nocindent
   au BufLeave *.css set cindent
 endif
+
+:command Formatjson %!python -m json.tool
 
 " Markdown
 if has("autocmd")

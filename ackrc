@@ -6,3 +6,5 @@ css=.sass,.scss
 coffee=.coffee
 --type-add
 handlebars=.hbs,.handlebars
+--type-add
+js=.json
