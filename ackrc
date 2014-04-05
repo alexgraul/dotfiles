@@ -1,10 +1,5 @@
---type-add
-html=.haml
---type-add
-css=.sass,.scss
---type-add
-coffee=.coffee
---type-add
-handlebars=.hbs,.handlebars
---type-add
-js=.json
+--type-set=html=.haml
+--type-set=css=.sass,.scss
+--type-set=coffee=.coffee
+--type-set=handlebars=.hbs,.handlebars
+--type-set=js=.json
