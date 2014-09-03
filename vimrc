@@ -114,12 +114,21 @@ if has("autocmd")
   au BufLeave *.css set cindent
 endif
 
-:command Formatjson %!python -m json.tool
+" :command Formatjson %!python -m json.tool
 
 " Markdown
 if has("autocmd")
   autocmd FileType markdown set linebreak
 endif
+
+" function! GuiTabLabel()
+  " let matchs= matchstr(:pwd,'\/.*$')
+  " return fnamemodify(bufname(winbufnr(1)), ":t")
+  " let name = getcwd()
+  " return matchstr(name,'\/[^/]+$')
+  " return 'foo'
+" endfunction
+" set guitablabel=%!GuiTabLabel()
 
 " Functions
 function! OpenChangedFiles()
