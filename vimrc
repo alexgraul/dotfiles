@@ -92,6 +92,9 @@ au FileType python setl sw=2 sts=2 et
 let mapleader = ","
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
+" CTRLP
+nmap <leader>p :CtrlP<CR>
+
 " Show whitespace
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
