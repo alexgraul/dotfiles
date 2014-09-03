@@ -94,6 +94,11 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 
 " CTRLP
 nmap <leader>p :CtrlP<CR>
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v(\.git|\.hg|\.svn|\.sass-cache|deploy|node_modules|labs_cookbook|build|tmp|log|vendor\/(rails|gems|plugins))$',
+  \ 'file': '\v(\.#.+|\.DS_Store|\.svn|\.sass-cache|\.png|\.jpe?g|\.gif|\.elc|\.rbc|\.pyc|\.swp|\.psd|\.pid|\.log|\.ai|\.pdf|\.mov|\.aep|\.dmg|\.zip|\.gz)$',
+  \ }
+nmap <leader>x :CtrlPClearCache<CR>
 
 " Show whitespace
 set listchars=tab:>-,trail:·,eol:$
