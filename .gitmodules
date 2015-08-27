@@ -36,7 +36,7 @@
 	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
-	url = https://github.com/ewiplayer/vim-scala.git
+	url = git@github.com:derekwyatt/vim-scala.git
 [submodule "bundle/jshint"]
 	path = bundle/jshint
 	url = https://github.com/walm/jshint.vim.git

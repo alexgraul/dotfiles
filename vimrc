@@ -56,6 +56,7 @@ vnoremap <space> zf
 
 set background=dark
 colorscheme solarized
+set transparency=10
 
 " Switch windows with Ctrl + a movement key
 nnoremap <C-h> <C-w>h
@@ -78,8 +79,14 @@ endif
 autocmd BufEnter *.rb,*.html,*.py,*.json,*.css,*.json,*.js,Rakefile,*.ru :Rooter
 autocmd TabEnter *.rb,*.html,*.py,*.json,*.css,*.json,*.js,Rakefile,*.ru :Rooter
 
+
+set guitablabel=%F
+
+
+
 set splitbelow
 set splitright
+
 augroup filetypedetect 
   au BufNewFile,BufRead Thorfile set filetype=ruby syntax=ruby
   au BufNewFile,BufRead *.thor set filetype=ruby syntax=ruby
@@ -107,6 +114,8 @@ set nolist!
 
 nmap <LEADER>d :NERDTreeToggle<CR>
 let NERDSpaceDelims=1
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.pyc$','\.DS_Store$']
 
 if has("autocmd")
   filetype plugin indent on  " enable filetype detection
@@ -128,15 +137,6 @@ endif
 if has("autocmd")
   autocmd FileType markdown set linebreak
 endif
-
-" function! GuiTabLabel()
-  " let matchs= matchstr(:pwd,'\/.*$')
-  " return fnamemodify(bufname(winbufnr(1)), ":t")
-  " let name = getcwd()
-  " return matchstr(name,'\/[^/]+$')
-  " return 'foo'
-" endfunction
-" set guitablabel=%!GuiTabLabel()
 
 " Functions
 function! OpenChangedFiles()
