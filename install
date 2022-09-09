@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#Install brew & oh-my-zsh first
+#Install fonts
+
 brew install ack wget tree bat exa fzf diff-so-fancy macvim
 mkdir ~/.tmp
 mkdir ~/.vim
