@@ -1,12 +1,31 @@
 set nocompatible
 
-silent! call pathogen#runtime_append_all_bundles()
+language en_US.UTF-8
+
+"MinPack
+packadd minpac
+
+call minpac#init({'verbose': 3})
+
+call minpac#add('altercation/vim-colors-solarized') "colors
+call minpac#add('tpope/vim-markdown') "markdown support
+call minpac#add('airblade/vim-rooter') "auto-sets root working dir
+call minpac#add('preservim/nerdtree') "NERDTree
+call minpac#add('mileszs/ack.vim') "Inline Ack support
+call minpac#add('pangloss/vim-javascript') "Better JS Support
+call minpac#add('preservim/nerdcommenter') "NERDTree
+call minpac#add('easymotion/vim-easymotion') "Easier move commands
+call minpac#add('ap/vim-css-color') "Show css colours inline
+call minpac#add('ctrlpvim/ctrlp.vim') "Fuzzy search
+
+command! PackUpdate call minpac#update()
+command! PackClean call minpac#clean()
+command! PackStatus call minpac#status()
 
 set tabstop=2               " default size of a real tab stop
 set softtabstop=2           " pressing tab/backspaces inserts/removes 2 chars
 set shiftwidth=2            " the number of spaces used by << and >>
 set expandtab               " insert spaces instead of tabs
-"set textwidth=72            " right margin to use when wrapping text
 
 set autoindent
 set nowrap                  " disable line wrapping
@@ -46,14 +65,6 @@ imap <right> <nop>
 nnoremap <space> za
 vnoremap <space> zf
 
-" colorscheme desert
-" colorscheme ir_black
-" colorscheme railscasts
-" colorscheme ir_black
-" colorscheme railscasts
-" colorscheme mac_classic
-" colorscheme topfunky-light
-
 set background=dark
 colorscheme solarized
 set transparency=10
@@ -76,22 +87,14 @@ if has("autocmd")
 endif
 
 "Rooter for change on tabs
-autocmd BufEnter *.rb,*.html,*.py,*.json,*.css,*.json,*.js,Rakefile,*.ru :Rooter
-autocmd TabEnter *.rb,*.html,*.py,*.json,*.css,*.json,*.js,Rakefile,*.ru :Rooter
+autocmd BufEnter *.py,*.ts,*.rb,*.html,*.py,*.json,*.css,*.json,*.js,*.ru :Rooter
+autocmd TabEnter *.py,*.ts,*.rb,*.html,*.py,*.json,*.css,*.json,*.js,*.ru :Rooter
 
 
 set guitablabel=%F
 
-
-
 set splitbelow
 set splitright
-
-augroup filetypedetect 
-  au BufNewFile,BufRead Thorfile set filetype=ruby syntax=ruby
-  au BufNewFile,BufRead *.thor set filetype=ruby syntax=ruby
-  au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
-augroup END 
 
 au FileType python setl sw=2 sts=2 et
 
@@ -115,7 +118,7 @@ set nolist!
 nmap <LEADER>d :NERDTreeToggle<CR>
 let NERDSpaceDelims=1
 let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.pyc$','\.DS_Store$']
+let NERDTreeIgnore=['\.swp$','\.pyc$','\.DS_Store$']
 
 if has("autocmd")
   filetype plugin indent on  " enable filetype detection
@@ -130,8 +133,6 @@ if has("autocmd")
   au BufEnter *.css set nocindent
   au BufLeave *.css set cindent
 endif
-
-" :command Formatjson %!python -m json.tool
 
 " Markdown
 if has("autocmd")
