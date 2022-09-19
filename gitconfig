@@ -9,3 +9,6 @@
 	br = branch
 	ci = commit
 	st = status
+[user]
+	name = Alex Graul
+	email = github@sho.ch
