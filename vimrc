@@ -25,7 +25,7 @@ command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 command! PackStatus call minpac#status()
 
-" Ale Confiration
+"ALE Config
 let g:airline#extensions#ale#enabled = 1
 
 let g:ale_linters_explicit = 1
@@ -97,21 +97,19 @@ if has("autocmd")
   autocmd BufWritePost .vimrc source $MYVIMRC
 endif
 
+" Quickly open the vim config file in a new tab.
+let mapleader = ","
+nmap <leader>v :tabedit $MYVIMRC<CR>
+
 "Rooter for change on tabs
 autocmd BufEnter *.py,*.ts,*.rb,*.html,*.py,*.json,*.css,*.json,*.js,*.ru,*.svelte :Rooter
 autocmd TabEnter *.py,*.ts,*.rb,*.html,*.py,*.json,*.css,*.json,*.js,*.ru,*.svelte :Rooter
 
-
 set guitablabel=%F
-
 set splitbelow
 set splitright
 
 au FileType python setl sw=2 sts=2 et
-
-" Quickly open the vim config file in a new tab.
-let mapleader = ","
-nmap <leader>v :tabedit $MYVIMRC<CR>
 
 " CTRLP
 nmap <leader>p :CtrlP<CR>
@@ -126,6 +124,7 @@ set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 set nolist!
 
+" NERDTree Config
 nmap <LEADER>d :NERDTreeToggle<CR>
 let NERDSpaceDelims=1
 let NERDTreeShowHidden=1
@@ -150,14 +149,3 @@ if has("autocmd")
   autocmd FileType markdown set linebreak
 endif
 
-" Functions
-function! OpenChangedFiles()
-  only " Close all windows, unless they're modified
-  let status = system('git status -s | grep "^ \?\(M\|A\)" | cut -d " " -f 3')
-  let filenames = split(status, "\n")
-  exec "edit " . filenames[0]
-  for filename in filenames[1:]
-    exec "sp " . filename
-  endfor
-endfunction
-command! OpenChangedFiles :call OpenChangedFiles()
