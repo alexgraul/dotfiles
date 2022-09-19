@@ -78,7 +78,7 @@ vnoremap <space> zf
 
 set background=dark
 colorscheme solarized
-set transparency=10
+set transparency=0
 
 " Switch windows with Ctrl + a movement key
 nnoremap <C-h> <C-w>h
@@ -102,8 +102,10 @@ let mapleader = ","
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
 "Rooter for change on tabs
-autocmd BufEnter *.py,*.ts,*.rb,*.html,*.py,*.json,*.css,*.json,*.js,*.ru,*.svelte :Rooter
-autocmd TabEnter *.py,*.ts,*.rb,*.html,*.py,*.json,*.css,*.json,*.js,*.ru,*.svelte :Rooter
+if has("autocmd")
+  autocmd BufEnter *.py,*.ts,*.rb,*.html,*.py,*.json,*.css,*.json,*.js,*.ru,*.svelte :Rooter
+  autocmd TabEnter *.py,*.ts,*.rb,*.html,*.py,*.json,*.css,*.json,*.js,*.ru,*.svelte :Rooter
+endif
 
 set guitablabel=%F
 set splitbelow
@@ -134,18 +136,22 @@ if has("autocmd")
   filetype plugin indent on  " enable filetype detection
 endif
 
-" Indentation
 if has("autocmd")
+" Indentation
   autocmd FileType sh setlocal shiftwidth=4
   autocmd FileType css setlocal shiftwidth=2
   autocmd FileType python setlocal shiftwidth=4
   autocmd BufRead,BufNewFile *.json setfiletype json
   au BufEnter *.css set nocindent
   au BufLeave *.css set cindent
-endif
 
-" Markdown
-if has("autocmd")
+  " Markdown
   autocmd FileType markdown set linebreak
+  autocmd BufRead Readme.md set wrap
 endif
 
+"Cmd-Opt-L/R between MacVim Tabs
+if has("gui_macvim")
+  noremap <M-D-Right> :tabnext<CR>
+  noremap <M-D-Left> :tabprev<CR>
+endif
