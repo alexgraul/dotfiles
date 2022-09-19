@@ -6,10 +6,13 @@
 brew install ack wget tree bat exa fzf diff-so-fancy macvim
 mkdir ~/.tmp
 mkdir ~/.vim
-ln -s ~/.dotfiles/zshrc ~/.zshrc
-ln -s ~/.dotfiles/p10k.zsh ~/.p10k.zsh
-ln -s ~/.dotfiles/vimrc ~/.vimrc
-ln -s ~/.dotfiles/gvimrc ~/.gvimrc
-ln -s ~/.dotfiles/ackrc ~/.ackrc
-ln -s ~/.dotfiles/vim-syntax ~/.vim/syntax
-ln -s ~/.dotfiles/vim-indent ~/.vim/indent
+ln -s `pwd`/zshrc ~/.zshrc
+ln -s `pwd`/p10k.zsh ~/.p10k.zsh
+
+ln -s `pwd`/vimrc ~/.vimrc
+ln -s `pwd`/gvimrc ~/.gvimrc
+ln -s `pwd`/ackrc ~/.ackrc
+ln -s `pwd`/vim-syntax ~/.vim/syntax
+ln -s `pwd`/vim-indent ~/.vim/indent
+
+ln -s `pwd`/gitconfig ~/.gitconfig

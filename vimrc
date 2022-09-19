@@ -17,10 +17,21 @@ call minpac#add('preservim/nerdcommenter') "NERDTree
 call minpac#add('easymotion/vim-easymotion') "Easier move commands
 call minpac#add('ap/vim-css-color') "Show css colours inline
 call minpac#add('ctrlpvim/ctrlp.vim') "Fuzzy search
+call minpac#add('burner/vim-svelte') "Fuzzy search
+call minpac#add('vim-airline/vim-airline') "Lint engine
+call minpac#add('dense-analysis/ale') "Lint engine
 
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 command! PackStatus call minpac#status()
+
+" Ale Confiration
+let g:airline#extensions#ale#enabled = 1
+
+let g:ale_linters_explicit = 1
+let g:ale_sign_column_always = 1
+let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
+let g:ale_linters = {'json': ['jsonlint'], 'javascript': ['prettier', 'eslint'], 'svelte': ['stylelint', 'eslint'] }
 
 set tabstop=2               " default size of a real tab stop
 set softtabstop=2           " pressing tab/backspaces inserts/removes 2 chars
@@ -87,8 +98,8 @@ if has("autocmd")
 endif
 
 "Rooter for change on tabs
-autocmd BufEnter *.py,*.ts,*.rb,*.html,*.py,*.json,*.css,*.json,*.js,*.ru :Rooter
-autocmd TabEnter *.py,*.ts,*.rb,*.html,*.py,*.json,*.css,*.json,*.js,*.ru :Rooter
+autocmd BufEnter *.py,*.ts,*.rb,*.html,*.py,*.json,*.css,*.json,*.js,*.ru,*.svelte :Rooter
+autocmd TabEnter *.py,*.ts,*.rb,*.html,*.py,*.json,*.css,*.json,*.js,*.ru,*.svelte :Rooter
 
 
 set guitablabel=%F
