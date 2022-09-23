@@ -12,13 +12,13 @@ call minpac#add('tpope/vim-markdown') "markdown support
 call minpac#add('airblade/vim-rooter') "auto-sets root working dir
 call minpac#add('preservim/nerdtree') "NERDTree
 call minpac#add('mileszs/ack.vim') "Inline Ack support
-call minpac#add('pangloss/vim-javascript') "Better JS Support
+call minpac#add('sheerun/vim-polyglot') "Indent/Syntax for dozens of languages
+call minpac#add('evanleck/vim-svelte') "Svelte Components
 call minpac#add('preservim/nerdcommenter') "NERDTree
 call minpac#add('easymotion/vim-easymotion') "Easier move commands
 call minpac#add('ap/vim-css-color') "Show css colours inline
 call minpac#add('ctrlpvim/ctrlp.vim') "Fuzzy search
-call minpac#add('burner/vim-svelte') "Fuzzy search
-call minpac#add('vim-airline/vim-airline') "Lint engine
+call minpac#add('vim-airline/vim-airline') "Status line, works with ALE
 call minpac#add('dense-analysis/ale') "Lint engine
 
 command! PackUpdate call minpac#update()
@@ -119,7 +119,7 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v(\.git|\.hg|\.svn|\.sass-cache|deploy|node_modules|labs_cookbook|build|tmp|log|vendor\/(rails|gems|plugins))$',
   \ 'file': '\v(\.#.+|\.DS_Store|\.svn|\.sass-cache|\.png|\.jpe?g|\.gif|\.elc|\.rbc|\.pyc|\.swp|\.psd|\.pid|\.log|\.ai|\.pdf|\.mov|\.aep|\.dmg|\.zip|\.gz)$',
   \ }
-nmap <leader>x :CtrlPClearCache<CR>
+nmap <leader>x :CtrlPClearCache <bar> :NERDTreeRefreshRoot<CR>
 
 " Show whitespace
 set listchars=tab:>-,trail:·,eol:$
@@ -134,9 +134,7 @@ let NERDTreeIgnore=['\.swp$','\.pyc$','\.DS_Store$']
 
 if has("autocmd")
   filetype plugin indent on  " enable filetype detection
-endif
 
-if has("autocmd")
 " Indentation
   autocmd FileType sh setlocal shiftwidth=4
   autocmd FileType css setlocal shiftwidth=2
