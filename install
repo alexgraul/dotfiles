@@ -12,7 +12,5 @@ ln -s `pwd`/p10k.zsh ~/.p10k.zsh
 ln -s `pwd`/vimrc ~/.vimrc
 ln -s `pwd`/gvimrc ~/.gvimrc
 ln -s `pwd`/ackrc ~/.ackrc
-ln -s `pwd`/vim-syntax ~/.vim/syntax
-ln -s `pwd`/vim-indent ~/.vim/indent
 
 ln -s `pwd`/gitconfig ~/.gitconfig
