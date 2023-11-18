@@ -1,5 +1,7 @@
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	editor = mvim -f
+	excludesfile = /Users/alexgraul/.gitignore_global
 [interactive]
 	diffFilter = diff-so-fancy --patch
 [init]

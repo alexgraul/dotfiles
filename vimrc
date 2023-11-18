@@ -34,9 +34,9 @@ let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
 let g:ale_linters = {'json': ['jsonlint'], 'javascript': ['prettier', 'eslint'], 'svelte': ['stylelint', 'eslint'] }
 
 set tabstop=2               " default size of a real tab stop
-set softtabstop=2           " pressing tab/backspaces inserts/removes 2 chars
-set shiftwidth=2            " the number of spaces used by << and >>
-set expandtab               " insert spaces instead of tabs
+" set softtabstop=2           " pressing tab/backspaces inserts/removes 2 chars
+" set shiftwidth=2            " the number of spaces used by << and >>
+" set expandtab               " insert spaces instead of tabs
 
 set autoindent
 set nowrap                  " disable line wrapping
@@ -76,7 +76,7 @@ imap <right> <nop>
 nnoremap <space> za
 vnoremap <space> zf
 
-set background=dark
+set background=light
 colorscheme solarized
 set transparency=0
 
@@ -122,7 +122,7 @@ let g:ctrlp_custom_ignore = {
 nmap <leader>x :CtrlPClearCache <bar> :NERDTreeRefreshRoot<CR>
 
 " Show whitespace
-set listchars=tab:>-,trail:·,eol:$
+set listchars=tab:\ \ ,trail:·,eol:$,nbsp:·
 nmap <silent> <leader>s :set nolist!<CR>
 set nolist!
 
