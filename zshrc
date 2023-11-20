@@ -14,7 +14,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 #Add Cargo to PATH
-path+=('/Users/alexgraul/.cargo/bin')
+path+=('/Users/alex/.cargo/bin')
 #
 
 # If you come from bash you might have to change your $PATH.

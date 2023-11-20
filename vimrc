@@ -1,5 +1,4 @@
-set nocompatible
-
+set nocompatible 
 language en_US.UTF-8
 
 "MinPack
@@ -20,6 +19,7 @@ call minpac#add('ap/vim-css-color') "Show css colours inline
 call minpac#add('ctrlpvim/ctrlp.vim') "Fuzzy search
 call minpac#add('vim-airline/vim-airline') "Status line, works with ALE
 call minpac#add('dense-analysis/ale') "Lint engine
+call minpac#add('MaxMEllon/vim-jsx-pretty') "Lint engine
 
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
@@ -31,7 +31,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_linters_explicit = 1
 let g:ale_sign_column_always = 1
 let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
-let g:ale_linters = {'json': ['jsonlint'], 'javascript': ['prettier', 'eslint'], 'svelte': ['stylelint', 'eslint'] }
+let g:ale_linters = {'json': ['jsonlint'], 'javascriptreact': ['eslint'], 'javascript': ['prettier', 'eslint'], 'svelte': ['stylelint', 'eslint'] }
 
 set tabstop=2               " default size of a real tab stop
 " set softtabstop=2           " pressing tab/backspaces inserts/removes 2 chars
@@ -76,9 +76,11 @@ imap <right> <nop>
 nnoremap <space> za
 vnoremap <space> zf
 
+syntax enable
 set background=light
 colorscheme solarized
 set transparency=0
+call togglebg#map("<F5>")
 
 " Switch windows with Ctrl + a movement key
 nnoremap <C-h> <C-w>h

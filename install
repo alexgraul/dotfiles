@@ -3,7 +3,7 @@
 #Install brew & oh-my-zsh first
 #Install fonts
 
-brew install ack wget tree bat exa fzf diff-so-fancy macvim
+brew install ack wget tree bat exa fzf diff-so-fancy macvim teleport kubectl
 mkdir ~/.tmp
 mkdir ~/.vim
 ln -s `pwd`/zshrc ~/.zshrc
@@ -14,3 +14,6 @@ ln -s `pwd`/gvimrc ~/.gvimrc
 ln -s `pwd`/ackrc ~/.ackrc
 
 ln -s `pwd`/gitconfig ~/.gitconfig
+ln -s `pwd`/gitignore_global ~/.gitignore_global
+git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
